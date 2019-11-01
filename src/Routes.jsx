@@ -14,7 +14,7 @@ export default class Routes extends Component {
   render() {
     return (
       <Switch>
-        <Redirect exact from="/" to="/dashboard"/>
+        <Redirect exact from="/" to="/sign-in"/>
         <Route component={Dashboard} exact path="/dashboard"/>
         <Route component={Home} exact path="/channels"/>
         <Route component={Reviews} exact path="/reviews"/>

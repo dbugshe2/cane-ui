@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import L from 'leaflet'
 
 const caneIcon = new L.Icon({
+  // eslint-disable-next-line no-undef
   iconUrl: require('../../../../assets/blind.svg'),
   // iconRetinaUrl: require('../assets/pointerIcon.svg'),
   iconAnchor: [5, 55],

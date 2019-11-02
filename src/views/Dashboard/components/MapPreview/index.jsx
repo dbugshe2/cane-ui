@@ -11,18 +11,18 @@ import { withStyles, Divider } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 import { Paper } from 'components';
 import styles from './styles';
+
+// Leaflet map files
 import caneIcon from './customMarker';
 
 import {
   Map as LeafletMap,
-  TileLayer,
   Popup,
-  GeoJSON,
   Marker
 } from 'react-leaflet';
-import {} from 'mapbox-gl';
 // import MapboxGlLayer from '@mongodb-js/react-mapbox-gl-leaflet';
 // import Marker from 'react-leaflet-animated-marker'
+import MapBoxGLLayer from '../../../../components/MapBoxGLLayer';
 
 export class MapPreview extends Component {
   constructor(props) {
@@ -47,15 +47,9 @@ export class MapPreview extends Component {
           Map
         </Typography>
         <LeafletMap center={position} zoom={this.state.zoom}>
-          {/* <MapboxGlLayer
+          <MapBoxGLLayer
             accessToken="pk.eyJ1IjoibWFyb29mc2hpdHR1IiwiYSI6ImNrMjFscnMweTBkNjIzZHBnaXAycDB5NmIifQ.Tvzq1einSjKXeFsFWKsrzA"
-            attribution="Copyright attribution message goes here"
-            style="mapbox://styles/mapbox/streets-v11"
-          /> */}
-          <TileLayer
-            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            style="https://openmaptiles.github.io/osm-bright-gl-style/style-cdn.json"
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            style="mapbox://styles/mapbox/streets-v10"
           />
           <Marker icon={caneIcon} position={position}>
             <Popup>Cane is Here</Popup>

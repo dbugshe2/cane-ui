@@ -10,6 +10,7 @@ import {
   LocationCard,
   MapPreview
 } from './components';
+import MapboxPreview from './MapboxPreview';
 
 const styles = theme => ({
   root: {
@@ -28,20 +29,15 @@ class Dashboard extends Component {
       <DashboardLayout title="Dashboard">
         <div className={classes.root}>
           <Grid container spacing={4}>
-            <Grid item lg={4} sm={4} xl={4} xs={12}>
+            <Grid item lg={12} sm={12} xl={12} xs={12}>
               <BatteryCard className={classes.item} />
             </Grid>
-
-            <Grid item lg={4} sm={4} xl={4} xs={12}>
-              <EstimatedTimeCard className={classes.item} />
-            </Grid>
-
-            <Grid item lg={4} sm={4} xl={4} xs={12}>
-              <LocationCard className={classes.item} />
-            </Grid>
             <Grid container spacing={4}>
-              <Grid item lg={12} sm={12} xl={12} xs={12}>
+              <Grid item lg={8} sm={8} xl={8} xs={12}>
                 <MapPreview className={classes.item} />
+              </Grid>
+              <Grid item lg={4} sm={4} xl={4} xs={12}>
+                <LocationCard className={classes.item} />
               </Grid>
             </Grid>
           </Grid>

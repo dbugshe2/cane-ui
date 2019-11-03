@@ -14,28 +14,20 @@ import {
 } from '@material-ui/core';
 import FormControl from '@material-ui/core/FormControl/FormControl';
 import {
-  DashboardOutlined as DashboardIcon,
+  HomeOutlined as DashboardIcon,
   LockOpenOutlined as LockOpenIcon,
-  InfoOutlined as InfoIcon,
+  HistoryOutlined as HistoryIcon,
   AccountBoxOutlined as AccountBoxIcon,
   SettingsOutlined as SettingsIcon,
-  SwitchVideoOutlined as ChannelsIcon,
-  CommentOutlined as ReviewsIcon
+  LiveHelpOutlined as HelpIcon,
+  DashboardOutlined as CaneIcon
 } from '@material-ui/icons';
 import styles from './styles';
 
 class Sidebar extends Component {
-  state = { selectedLang: 'EN' };
-
-  handleChangeLang = value => {
-    this.setState({
-      selectedLang: value
-    });
-  };
 
   render() {
     const { classes, className } = this.props;
-    const { selectedLang } = this.state;
     const rootClassName = classNames(classes.root, className);
 
     return (
@@ -47,7 +39,7 @@ class Sidebar extends Component {
               className={classes.logoImage}
               src="/images/logos/origami-bird.png"
             /> */}
-            <Typography variant="h3">Cane Monitor</Typography>
+            <Typography variant="h3" />
           </Link>
         </div>
 
@@ -65,25 +57,27 @@ class Sidebar extends Component {
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Dashboard"
+              primary="Home Page"
             />
           </ListItem>
-
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
             component={NavLink}
-            to="/sign-in"
+            to="/cane"
           >
             <ListItemIcon className={classes.listItemIcon}>
-              <LockOpenIcon />
+              <CaneIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Login"
+              primary="Dashboard"
             />
           </ListItem>
+         
           
+          
+         
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
@@ -95,22 +89,49 @@ class Sidebar extends Component {
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Account"
+              primary="Family Relation"
             />
           </ListItem>
-
           <ListItem
             activeClassName={classes.activeListItem}
             className={classes.listItem}
             component={NavLink}
-            to="/settings"
+            to="/help"
           >
             <ListItemIcon className={classes.listItemIcon}>
-              <SettingsIcon />
+              <HelpIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Settings"
+              primary="Help"
+            />
+          </ListItem>
+          <ListItem
+            activeClassName={classes.activeListItem}
+            className={classes.listItem}
+            component={NavLink}
+            to="/history"
+          >
+            <ListItemIcon className={classes.listItemIcon}>
+              <HistoryIcon />
+            </ListItemIcon>
+            <ListItemText
+              classes={{ primary: classes.listItemText }}
+              primary="History"
+            />
+          </ListItem>
+          <ListItem
+            activeClassName={classes.activeListItem}
+            className={classes.listItem}
+            component={NavLink}
+            to="/sign-in"
+          >
+            <ListItemIcon className={classes.listItemIcon}>
+              <LockOpenIcon />
+            </ListItemIcon>
+            <ListItemText
+              classes={{ primary: classes.listItemText }}
+              primary="Logout"
             />
           </ListItem>
         </List>

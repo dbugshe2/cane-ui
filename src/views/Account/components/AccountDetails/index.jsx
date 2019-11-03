@@ -39,13 +39,12 @@ const states = [
 
 class Account extends Component {
   state = {
-    hotelName: 'Mandalina Luxury Suites',
     firstName: 'John',
     lastName: 'Doe',
-    email: 'contact@devias.io',
+    email: 'user@gmail.com',
     phone: '',
-    state: 'Alabama',
-    country: 'USA'
+    state: 'Niger',
+    country: 'Nigeria'
   };
 
   handleChange = e => {
@@ -67,8 +66,8 @@ class Account extends Component {
       >
         <PortletHeader>
           <PortletLabel
-            subtitle="Add information about hotel"
-            title="Hotel Profile"
+            subtitle="Add Family Relation Information"
+            title="User Profile"
           />
         </PortletHeader>
         <PortletContent noPadding>
@@ -76,16 +75,7 @@ class Account extends Component {
             autoComplete="off"
             noValidate
           >
-            <div className={classes.field}>
-              <TextField
-                className={classes.textField}
-                label="Hotel Name"
-                margin="dense"
-                required
-                value={hotelName}
-                variant="outlined"
-              />
-            </div>
+            
             <div className={classes.field}>
               <TextField
                 className={classes.textField}
@@ -133,7 +123,8 @@ class Account extends Component {
                 select
                 SelectProps={{ native: true }}
                 value={state}
-                variant="outlined">
+                variant="outlined"
+              >
                 {states.map(option => (
                   <option
                     key={option.value}
@@ -161,6 +152,7 @@ class Account extends Component {
           >
             Save details
           </Button>
+          
         </PortletFooter>
       </Portlet>
     );

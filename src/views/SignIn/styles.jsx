@@ -17,7 +17,7 @@ export default theme => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundImage: 'url(/images/hotel.jpg)',
+    backgroundImage: 'url(/images/blind.jpg)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center'
@@ -27,15 +27,15 @@ export default theme => ({
     flexBasis: '600px'
   },
   quoteText: {
-    color: theme.palette.common.white,
+    color: theme.palette.common.secondary,
     fontWeight: 300
   },
   name: {
     marginTop: theme.spacing.unit * 3,
-    color: theme.palette.common.white
+    color: theme.palette.common.dark
   },
   bio: {
-    color: theme.palette.common.white
+    color: theme.palette.common.grey
   },
   contentWrapper: {},
   content: {

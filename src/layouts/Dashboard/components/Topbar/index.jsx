@@ -8,7 +8,8 @@ import {IconButton, Toolbar, Typography,} from '@material-ui/core';
 
 import {
   Menu as MenuIcon,
-  Close as CloseIcon
+  Close as CloseIcon,
+  ArrowBackIosOutlined as ArrowIcon,
 } from '@material-ui/icons';
 
 // Shared services
@@ -97,7 +98,7 @@ class Topbar extends Component {
               onClick={onToggleSidebar}
               variant="text"
             >
-              {isSidebarOpen ? <CloseIcon /> : <MenuIcon />}
+              {isSidebarOpen ? <ArrowIcon /> : <MenuIcon />}
             </IconButton>
             <Typography
               className={classes.title}

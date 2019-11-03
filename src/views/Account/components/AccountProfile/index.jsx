@@ -31,11 +31,11 @@ class AccountProfile extends Component {
         <PortletContent>
           <div className={classes.details}>
             <div className={classes.info}>
-              <Typography variant="h2">Mandalina Luxury Suites</Typography>
+              <Typography variant="h2">First Last Name</Typography>
               <Typography className={classes.locationText} variant="body1">
                 Andifli Mah. Niyazi Acun Sokak No:11
               </Typography>
-              <Typography className={classes.locationText} variant="body1">
+              {/* <Typography className={classes.locationText} variant="body1">
                 Kaş / Antalya, Turkey
               </Typography>
               <Typography className={classes.locationText} variant="body1">
@@ -43,17 +43,11 @@ class AccountProfile extends Component {
               </Typography>
               <Typography className={classes.locationText} variant="body1">
                 E-mail: info@mandalinaluxurysuites.com
-              </Typography>
+              </Typography> */}
             </div>
             <img alt="companyLogo" className={classes.site} src={companyLogo}/>
           </div>
-          <div className={classes.progressWrapper}>
-            <Typography variant="body1">Profile Completeness: 70%</Typography>
-            <LinearProgress
-              value={70}
-              variant="determinate"
-            />
-          </div>
+          
         </PortletContent>
         <PortletFooter>
           <Button

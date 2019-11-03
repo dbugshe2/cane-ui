@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles, Card } from '@material-ui/core';
+import { withStyles } from '@material-ui/core';
 import { Grid, Typography } from '@material-ui/core';
 import { Dashboard as DashboardLayout } from 'layouts';
-import Carousel from 'nuka-carousel';
 import { PortletContent, Portlet, PortletLabel, PortletHeader } from 'components';
 
 const styles = theme => ({
@@ -15,41 +14,25 @@ const styles = theme => ({
   }
 });
 
-class Dashboard extends Component {
+class CaneHistory extends Component {
   render() {
     const { classes } = this.props;
 
     return (
-      <DashboardLayout title="Development of an IWCR">
+      <DashboardLayout title="History">
         <div className={classes.root}>
+            
           <Grid container spacing={4}>
             <Grid item lg={12} sm={12} xl={12} xs={12}>
-              <Card>
-                <Carousel
-                  autoplay
-                  heightMode="first"
-                  style={{ height: '400px' }}
-                >
-                  <img src="https://via.placeholder.com/800x400/ffffff/c0392b/&text=slide1" />
-                  <img src="https://via.placeholder.com/800x400/ffffff/c0392b/&text=slide2" />
-                  <img src="https://via.placeholder.com/800x400/ffffff/c0392b/&text=slide3" />
-                  <img src="https://via.placeholder.com/800x400/ffffff/c0392b/&text=slide4" />
-                  <img src="https://via.placeholder.com/800x400/ffffff/c0392b/&text=slide5" />
-                  <img src="https://via.placeholder.com/800x400/ffffff/c0392b/&text=slide6" />
-                </Carousel>
-              </Card>
-            </Grid>
-            <Grid container spacing={4}>
-              <Grid item lg={12} sm={12} xl={12} xs={12}>
-                <Portlet>
-                  <PortletHeader>
-                    <PortletLabel
-                      subtitle="Just some Info"
-                      title="General Information"
-                    />
-                  </PortletHeader>
-                  <PortletContent>
-                    <Typography variant="body1">
+              <Portlet>
+                <PortletHeader>
+                  <PortletLabel
+                    subtitle="Just some Info"
+                    title="General Information"
+                  />
+                </PortletHeader>
+                <PortletContent>
+                  <Typography variant="body1">
                       Lorem ipsum dolor sit amet consectetur adipiscing elit
                       quam risus pharetra id, malesuada mattis mus parturient
                       feugiat varius quisque hac magnis eget habitasse, inceptos
@@ -92,10 +75,9 @@ class Dashboard extends Component {
                       dapibus fusce enim phasellus sapien, ullamcorper
                       vestibulum netus interdum platea nibh ad, augue consequat
                       vivamus eleifend morbi fringilla magna.
-                    </Typography>
-                  </PortletContent>
-                </Portlet>
-              </Grid>
+                  </Typography>
+                </PortletContent>
+              </Portlet>
             </Grid>
           </Grid>
         </div>
@@ -104,8 +86,8 @@ class Dashboard extends Component {
   }
 }
 
-Dashboard.propTypes = {
+CaneHistory.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Dashboard);
+export default withStyles(styles)(CaneHistory);

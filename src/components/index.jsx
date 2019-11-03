@@ -1,5 +1,5 @@
 export { default as DisplayMode } from './DisplayMode';
-// export { default as MapBoxGLLayer } from './MapBoxGLLayer';
+export { default as GoogleMap } from './GoogleMap';
 export { default as Paper } from './Paper';
 export { default as Portlet } from './Portlet';
 export { default as PortletContent } from './PortletContent';

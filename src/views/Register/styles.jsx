@@ -17,7 +17,7 @@ export default theme => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundImage: 'url(/images/bath.jpg)',
+    backgroundImage: 'url(/images/ampel.jpg)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center'
@@ -139,7 +139,7 @@ export default theme => ({
     marginTop: theme.spacing.unit * 2
   },
   phoneNumber:{
-      marginTop: theme.spacing.unit * 2,
+    marginTop: theme.spacing.unit * 2,
     width: '100%',
     display: 'grid'
   },

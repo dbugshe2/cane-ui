@@ -39,7 +39,7 @@ class Footer extends Component {
           className={classes.company}
           variant="body1"
         >
-          &copy; Made in FUT 2019
+          &copy; 2019
         </Typography>
         <Typography variant="caption">
           {/* <img

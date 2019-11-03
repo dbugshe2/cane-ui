@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Link, withRouter} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 
 // Externals
 import PropTypes from 'prop-types';
@@ -8,7 +8,7 @@ import validate from 'validate.js';
 import _ from 'underscore';
 
 // Material helpers
-import {withStyles} from '@material-ui/core';
+import { withStyles } from '@material-ui/core';
 
 // Material components
 import {
@@ -19,9 +19,7 @@ import {
   Typography
 } from '@material-ui/core';
 
-
-import {Cancel} from '@material-ui/icons';
-
+import { Cancel } from '@material-ui/icons';
 
 // Component styles
 import styles from './styles';
@@ -31,11 +29,11 @@ import styles from './styles';
 // Form validation schema
 import schema from './schema';
 
-import {Footer} from '../../layouts/Dashboard/components';
+import { Footer } from '../../layouts/Dashboard/components';
 import LoginService from '../../services/login/index';
 
 // Service methods
-const signIn = (credentials) => {
+const signIn = credentials => {
   return LoginService.login(credentials);
   /*  return new Promise(resolve => {
       setTimeout(() => {
@@ -65,15 +63,15 @@ class SignIn extends Component {
   };
 
   handleBack = () => {
-    const {history} = this.props;
+    const { history } = this.props;
 
     history.goBack();
   };
 
   validateForm = _.debounce(() => {
-    const {values} = this.state;
+    const { values } = this.state;
 
-    const newState = {...this.state};
+    const newState = { ...this.state };
     const errors = validate(values, schema);
 
     newState.errors = errors || {};
@@ -83,7 +81,7 @@ class SignIn extends Component {
   }, 300);
 
   handleFieldChange = (field, value) => {
-    const newState = {...this.state};
+    const newState = { ...this.state };
 
     newState.submitError = null;
     newState.touched[field] = true;
@@ -94,21 +92,24 @@ class SignIn extends Component {
 
   handleSignIn = async () => {
     try {
-      const {history} = this.props;
-      const {values} = this.state;
+      const { history } = this.props;
+      const { values } = this.state;
 
-      this.setState({isLoading: true});
-      this.setState({showSignInError: false});
+      this.setState({ isLoading: true });
+      this.setState({ showSignInError: false });
 
-      let loginResult = await signIn({email: values.email, password: values.password});
-      this.setState({isLoading: false});
+      let loginResult = await signIn({
+        email: values.email,
+        password: values.password
+      });
+      this.setState({ isLoading: false });
       if (loginResult) {
         localStorage.setItem('isAuthenticated', true);
         history.push('/dashboard');
-        this.setState({showSignInError: false});
+        this.setState({ showSignInError: false });
       } else {
         localStorage.setItem('isAuthenticated', true);
-        this.setState({showSignInError: true});
+        this.setState({ showSignInError: true });
       }
     } catch (error) {
       this.setState({
@@ -119,7 +120,7 @@ class SignIn extends Component {
   };
 
   render() {
-    const {classes} = this.props;
+    const { classes } = this.props;
     const {
       values,
       touched,
@@ -140,58 +141,34 @@ class SignIn extends Component {
       confirmButtonText: 'Cool'
     });*/
 
-
     return (
       <div className={classes.root}>
-        <Grid
-          className={classes.grid}
-          container
-        >
-          <Grid
-            className={classes.quoteWrapper}
-            item
-            lg={5}
-          >
+        <Grid className={classes.grid} container>
+          <Grid className={classes.quoteWrapper} item lg={5}>
             <div className={classes.quote}>
               <div className={classes.quoteInner}>
-                <Typography
-                  className={classes.quoteText}
-                  variant="h1"
-                >
+                <Typography className={classes.quoteText} variant="h1">
                   Hella narwhal Cosby sweater McSweeney's, salvia kitsch before
                   they sold out High Life.
                 </Typography>
                 <div className={classes.person}>
-                  <Typography
-                    className={classes.name}
-                    variant="body1"
-                  >
+                  <Typography className={classes.name} variant="body1">
                     Takamaru Ayako
                   </Typography>
-                  <Typography
-                    className={classes.bio}
-                    variant="body2"
-                  >
+                  <Typography className={classes.bio} variant="body2">
                     Manager at inVision
                   </Typography>
                 </div>
               </div>
             </div>
           </Grid>
-          <Grid
-            className={classes.content}
-            item
-            lg={7}
-            xs={12}
-          >
+          <Grid className={classes.content} item lg={7} xs={12}>
             <div className={classes.content}>
               <div className={classes.contentBody}>
                 <form className={classes.form}>
-                  <Typography
-                    className={classes.title}
-                    variant="h2"
-                  >
-                    Sign in
+                  <image source="" />
+                  <Typography className={classes.title} variant="h2">
+                    Development of an Intelligent Walking Cane
                   </Typography>
                   <div className={classes.fields}>
                     <TextField
@@ -234,52 +211,45 @@ class SignIn extends Component {
                     )}
                   </div>
                   {submitError && (
-                    <Typography
-                      className={classes.submitError}
-                      variant="body2"
-                    >
+                    <Typography className={classes.submitError} variant="body2">
                       {submitError}
                     </Typography>
                   )}
                   {isLoading ? (
-                    <CircularProgress className={classes.progress}/>
+                    <CircularProgress className={classes.progress} />
                   ) : (
-                    <Button
-                      className={classes.signInButton}
-                      color="primary"
-                      disabled={!isValid}
-                      onClick={this.handleSignIn}
-                      size="large"
-                      variant="contained"
-                    >
+                    <Link to="/dashboard">
+                      <Button
+                        className={classes.signInButton}
+                        color="primary"
+                        disabled={!isValid}
+                        // onClick={this.handleSignIn}
+                        size="large"
+                        variant="contained"
+                      >
                       Sign in now
-                    </Button>
+                      </Button>
+                    </Link>
                   )}
-                  {showSignInError &&
-                  <Typography
-                    className={classes.signInError}
-                    variant="subtitle2"
-                  >
-                    <Cancel/>
-                    Username or password is wrong.
-                  </Typography>
-                  }
-
-                  <Typography
-                    className={classes.signUp}
-                    variant="body1"
-                  >
-                    Don't have an account?{' '}
-                    <Link
-                      className={classes.signUpUrl}
-                      to="/sign-up"
+                  {showSignInError && (
+                    <Typography
+                      className={classes.signInError}
+                      variant="subtitle2"
                     >
+                      <Cancel />
+                      Username or password is wrong.
+                    </Typography>
+                  )}
+
+                  <Typography className={classes.signUp} variant="body1">
+                    Don't have an account?{' '}
+                    <Link className={classes.signUpUrl} to="/register">
                       Sign up
                     </Link>
                   </Typography>
                 </form>
               </div>
-              <Footer/>
+              <Footer />
             </div>
           </Grid>
         </Grid>

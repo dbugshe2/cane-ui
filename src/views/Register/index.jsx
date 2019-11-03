@@ -18,7 +18,7 @@ import {
   Grid,
   TextField,
   Typography,
-    Fade
+  Fade
 } from '@material-ui/core';
 
 // Shared utilities
@@ -32,8 +32,7 @@ import schema from './schema';
 
 import { Footer } from '../../layouts/Dashboard/components';
 
-import MuiPhoneNumber from "material-ui-phone-number";
-
+import MuiPhoneNumber from 'material-ui-phone-number';
 
 validate.validators.checked = validators.checked;
 
@@ -117,7 +116,7 @@ class Register extends Component {
         password: values.password
       });
 
-      this.setState({showSuccessMessage: true});
+      this.setState({ showSuccessMessage: true });
       //history.push('/sign-in');
       this.setState({ isLoading: false });
     } catch (error) {
@@ -137,7 +136,7 @@ class Register extends Component {
       isValid,
       submitError,
       isLoading,
-        showSuccessMessage
+      showSuccessMessage
     } = this.state;
 
     const showFirstNameError =
@@ -153,176 +152,185 @@ class Register extends Component {
 
     return (
       <div className={classes.root}>
-        <Grid
-          className={classes.grid}
-          container
-        >
-          <Grid
-            className={classes.quoteWrapper}
-            item
-            lg={5}
-          >
+        <Grid className={classes.grid} container>
+          <Grid className={classes.quoteWrapper} item lg={5}>
             <div className={classes.quote}>
               <div className={classes.quoteInner}>
-                <Typography
-                  className={classes.quoteText}
-                  variant="h1"
-                >
+                <Typography className={classes.quoteText} variant="h1">
                   Hella narwhal Cosby sweater McSweeney's, salvia kitsch before
                   they sold out High Life.
                 </Typography>
                 <div className={classes.person}>
-                  <Typography
-                    className={classes.name}
-                    variant="body1"
-                  >
+                  <Typography className={classes.name} variant="body1">
                     Takamaru Ayako
                   </Typography>
-                  <Typography
-                    className={classes.bio}
-                    variant="body2"
-                  >
+                  <Typography className={classes.bio} variant="body2">
                     Manager at inVision
                   </Typography>
                 </div>
               </div>
             </div>
           </Grid>
-          <Grid
-            className={classes.content}
-            item
-            lg={7}
-            xs={12}
-          >
+          <Grid className={classes.content} item lg={7} xs={12}>
             <div className={classes.content}>
-
               <div className={classes.contentBody}>
                 <form className={classes.form}>
-                  <Typography
-                      className={classes.title}
-                      variant="h2"
-                  >
-                    Register
+                  <Typography className={classes.title} variant="h2">
+                    Create a new account
                   </Typography>
-                  <Typography
-                      className={classes.subtitle}
-                      variant="body1"
-                  >
-                    Use your work email to register... it's free.
-                  </Typography>
+                  <Typography className={classes.subtitle} variant="body1" />
 
-                    <div className={classes.fields}>
-                      <TextField
-                          className={classes.textField}
-                          label="First name"
-                          name="firstName"
-                          onChange={event =>
-                              this.handleFieldChange('firstName', event.target.value)
-                          }
-                          value={values.firstName}
-                          variant="outlined"
+                  <div className={classes.fields}>
+                    <TextField
+                      className={classes.textField}
+                      label="First name"
+                      name="firstName"
+                      onChange={event =>
+                        this.handleFieldChange('firstName', event.target.value)
+                      }
+                      value={values.firstName}
+                      variant="outlined"
+                    />
+                    {showFirstNameError && (
+                      <Typography
+                        className={classes.fieldError}
+                        variant="body2"
+                      >
+                        {errors.firstName[0]}
+                      </Typography>
+                    )}
+                    <TextField
+                      className={classes.textField}
+                      label="Last name"
+                      onChange={event =>
+                        this.handleFieldChange('lastName', event.target.value)
+                      }
+                      value={values.lastName}
+                      variant="outlined"
+                    />
+                    {showLastNameError && (
+                      <Typography
+                        className={classes.fieldError}
+                        variant="body2"
+                      >
+                        {errors.lastName[0]}
+                      </Typography>
+                    )}
+                    <TextField
+                      className={classes.textField}
+                      label="Valid Email"
+                      name="email"
+                      onChange={event =>
+                        this.handleFieldChange('email', event.target.value)
+                      }
+                      value={values.email}
+                      variant="outlined"
+                    />
+                    {showEmailError && (
+                      <Typography
+                        className={classes.fieldError}
+                        variant="body2"
+                      >
+                        {errors.email[0]}
+                      </Typography>
+                    )}
+                    <TextField
+                      className={classes.textField}
+                      label="Password"
+                      name="password"
+                      onChange={event =>
+                        this.handleFieldChange('password', event.target.value)
+                      }
+                      type="password"
+                      value={values.password}
+                      variant="outlined"
+                    />
+                    {showPasswordError && (
+                      <Typography
+                        className={classes.fieldError}
+                        variant="body2"
+                      >
+                        {errors.password[0]}
+                      </Typography>
+                    )}
+                    <TextField
+                      className={classes.textField}
+                      label="Verify Password"
+                      name="password2"
+                      onChange={event =>
+                        this.handleFieldChange('password2', event.target.value)
+                      }
+                      type="password"
+                      value={values.password2}
+                      variant="outlined"
+                    />
+                    {showPasswordError && (
+                      <Typography
+                        className={classes.fieldError}
+                        variant="body2"
+                      >
+                        {errors.password2[0]}
+                      </Typography>
+                    )}
+                    <TextField
+                      className={classes.textField}
+                      label="Device ID"
+                      name="deviceId"
+                      variant="outlined"
+                    />
+                    <TextField
+                      className={classes.textField}
+                      label=" Address"
+                      name="address"
+                      variant="outlined"
+                    />
+                    <div className={classes.phoneNumber}>
+                      <MuiPhoneNumber
+                        data-cy="user-phone"
+                        defaultCountry={'ng'}
+                        label="Phone Number"
+                        name="phone"
+                        variant="outlined"
                       />
-                      {showFirstNameError && (
-                          <Typography
-                              className={classes.fieldError}
-                              variant="body2"
-                          >
-                            {errors.firstName[0]}
-                          </Typography>
-                      )}
-                      <TextField
-                          className={classes.textField}
-                          label="Last name"
-                          onChange={event =>
-                              this.handleFieldChange('lastName', event.target.value)
-                          }
-                          value={values.lastName}
-                          variant="outlined"
-                      />
-                      {showLastNameError && (
-                          <Typography
-                              className={classes.fieldError}
-                              variant="body2"
-                          >
-                            {errors.lastName[0]}
-                          </Typography>
-                      )}
-                      <TextField
-                          className={classes.textField}
-                          label="Email"
-                          name="email"
-                          onChange={event =>
-                              this.handleFieldChange('email', event.target.value)
-                          }
-                          value={values.email}
-                          variant="outlined"
-                      />
-                      {showEmailError && (
-                          <Typography
-                              className={classes.fieldError}
-                              variant="body2"
-                          >
-                            {errors.email[0]}
-                          </Typography>
-                      )}
-                      <TextField
-                          className={classes.textField}
-                          label="Company Name"
-                          name="companyName"
-                          variant="outlined"
-                      />
-                      <TextField
-                          className={classes.textField}
-                          label="Company Address"
-                          name="companyAddress"
-                          variant="outlined"
-                      />
-                      <div className={classes.phoneNumber}>
-                        <MuiPhoneNumber name="phone"
-                                        label="Phone Number"
-                                        data-cy="user-phone"
-                                        defaultCountry={"tr"}
-                                        variant="outlined"/>
-                      </div>
                     </div>
+                  </div>
 
-                    {submitError && (
-                        <Typography
-                            className={classes.submitError}
-                            variant="body2"
-                        >
-                          {submitError}
-                        </Typography>
-                    )}
-                    {isLoading ? (
-                        <CircularProgress className={classes.progress} />
-                    ) : (
-                        <Button
-                            className={classes.signUpButton}
-                            color="primary"
-                            /*disabled={!isValid}*/
-                            onClick={this.handleSignUp}
-                            size="large"
-                            variant="contained"
-                        >
-                          Register now
-                        </Button>
-                    )}
-
+                  {submitError && (
+                    <Typography className={classes.submitError} variant="body2">
+                      {submitError}
+                    </Typography>
+                  )}
+                  {isLoading ? (
+                    <CircularProgress className={classes.progress} />
+                  ) : (
+                    <Button
+                      className={classes.signUpButton}
+                      color="primary"
+                      /*disabled={!isValid}*/
+                      onClick={this.handleSignUp}
+                      size="large"
+                      variant="contained"
+                    >
+                      Register now
+                    </Button>
+                  )}
+                  <Typography className={classes.signIn} variant="body1">
+                    Already have an account?{' '}
+                    <Link className={classes.signInUrl} to="/sign-in">
+                      Sign in
+                    </Link>
+                  </Typography>
                 </form>
               </div>
 
               <Fade in={this.state.showSuccessMessage}>
-                  <Typography
-                      className={classes.successMessage}
-                      variant="h1"
-                  >
-                    Hella narwhal Cosby sweater McSweeney's, salvia kitsch before
-                    they sold out High Life.
-                  </Typography>
+                <Typography className={classes.successMessage} variant="h1">
+                  Hella narwhal Cosby sweater McSweeney's, salvia kitsch before
+                  they sold out High Life.
+                </Typography>
               </Fade>
 
-              <Footer/>
+              <Footer />
             </div>
           </Grid>
         </Grid>

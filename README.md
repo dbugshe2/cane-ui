@@ -1,10 +1,10 @@
-## Hotel Insighter
+## Intelligent Walking Stick System Caretaker UI
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 Digital Walking stick / Cane UI
 
-based on react material admin
+based on react material ui
 
 ## Quick start
 
@@ -18,6 +18,6 @@ based on react material admin
 
 
 
-## Contact Us
+## Contact Me
 
-- Email Us: 
+- Email Us: [@maroofshittu](https://twitter.com/maroofshittu) on Twitter

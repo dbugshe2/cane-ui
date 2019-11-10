@@ -42,7 +42,9 @@
     "react/react-in-jsx-scope": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 0,
-    "semi": 0
+    "semi": 0,
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
   },
   "env": {
     "es6": true,
@@ -53,5 +55,5 @@
     "jsx": true,
     "experimentalObjectRestSpread": true
   },
-  "plugins": ["react"]
+  "plugins": ["react", "react-hooks"]
 }

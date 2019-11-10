@@ -1,0 +1,164 @@
+import React, { Component, Fragment } from 'react';
+import { withRouter } from 'react-router-dom';
+import classNames from 'classnames';
+import compose from 'recompose/compose';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core';
+import {IconButton, Toolbar, Typography,} from '@material-ui/core';
+
+import {
+  Menu as MenuIcon,
+  Close as CloseIcon,
+  ArrowBackIosOutlined as ArrowIcon,
+} from '@material-ui/icons';
+
+// Shared services
+import { getNotifications } from 'services/notification';
+
+// Component styles
+// import styles from './styles';
+
+class Topbar extends Component {
+
+  signal = true;
+
+  state = {
+    notifications: [],
+    notificationsLimit: 4,
+    notificationsCount: 0,
+    notificationsEl: null,
+    names: [],
+  };
+
+  async getNotifications() {
+    try {
+      const { notificationsLimit } = this.state;
+
+      const { notifications, notificationsCount } = await getNotifications(
+        notificationsLimit
+      );
+
+      if (this.signal) {
+        this.setState({
+          notifications,
+          notificationsCount
+        });
+      }
+    } catch (error) {
+      return;
+    }
+  }
+
+  componentDidMount() {
+    this.signal = true;
+    this.getNotifications();
+  }
+
+  componentWillUnmount() {
+    this.signal = false;
+  }
+
+  /*handleSignOut = () => {
+    const { history } = this.props;
+
+    localStorage.setItem('isAuthenticated', false);
+    history.push('/sign-in');
+  };
+
+  handleShowNotifications = event => {
+    this.setState({
+      notificationsEl: event.currentTarget
+    });
+  };
+
+  handleCloseNotifications = () => {
+    this.setState({
+      notificationsEl: null
+    });
+  };*/
+
+  render() {
+
+    const {
+      classes,
+      className,
+      title,
+      isSidebarOpen,
+      onToggleSidebar
+    } = this.props;
+
+    const rootClassName = classNames(classes.root, className);
+
+    return (
+      <Fragment>
+        <div className={rootClassName}>
+          <Toolbar className={classes.toolbar}>
+            <IconButton
+              className={classes.menuButton}
+              onClick={onToggleSidebar}
+              variant="text"
+            >
+              {isSidebarOpen ? <ArrowIcon /> : <MenuIcon />}
+            </IconButton>
+            <Typography
+              className={classes.title}
+              variant="h4"
+            >
+              {title}
+            </Typography>
+
+          </Toolbar>
+        </div>
+      </Fragment>
+    );
+  }
+}
+
+Topbar.propTypes = {
+  className: PropTypes.string,
+  classes: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
+  isSidebarOpen: PropTypes.bool,
+  onToggleSidebar: PropTypes.func,
+  title: PropTypes.string
+};
+
+Topbar.defaultProps = {
+  onToggleSidebar: () => {}
+};
+
+export default compose(
+  withRouter,
+  withStyles(styles)
+)(Topbar);
+
+export const styles = theme => ({
+  root: {
+    borderBottom: `1px solid ${theme.palette.border}`,
+    backgroundColor: theme.palette.common.white,
+    display: 'flex',
+    alignItems: 'center',
+    height: '64px',
+    zIndex: theme.zIndex.appBar
+  },
+  toolbar: {
+    minHeight: 'auto',
+    width: '100%'
+  },
+  title: {
+    marginLeft: theme.spacing.unit
+  },
+  menuButton: {
+    marginLeft: '-4px'
+  },
+  notificationsButton: {
+    marginLeft: 'auto'
+  },
+  signOutButton: {
+    marginLeft: theme.spacing.unit
+  },
+  optionText: {
+    marginTop: '2px',
+    marginLeft: '5px',
+  }
+});

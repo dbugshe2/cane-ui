@@ -13,7 +13,7 @@ import { withStyles } from '@material-ui/core';
 // Material components
 import {
   Grid,
-  Button,
+  Button, 
   CircularProgress,
   TextField,
   Typography
@@ -144,25 +144,7 @@ class SignIn extends Component {
     return (
       <div className={classes.root}>
         <Grid className={classes.grid} container>
-          <Grid className={classes.quoteWrapper} item lg={5}>
-            <div className={classes.quote}>
-              <div className={classes.quoteInner}>
-                <Typography className={classes.quoteText} variant="h1">
-                  Hella narwhal Cosby sweater McSweeney's, salvia kitsch before
-                  they sold out High Life.
-                </Typography>
-                <div className={classes.person}>
-                  <Typography className={classes.name} variant="body1">
-                    Takamaru Ayako
-                  </Typography>
-                  <Typography className={classes.bio} variant="body2">
-                    Manager at inVision
-                  </Typography>
-                </div>
-              </div>
-            </div>
-          </Grid>
-          <Grid className={classes.content} item lg={7} xs={12}>
+          <Grid className={classes.content} item lg={12} xs={12}>
             <div className={classes.content}>
               <div className={classes.contentBody}>
                 <form className={classes.form}>
@@ -218,7 +200,7 @@ class SignIn extends Component {
                   {isLoading ? (
                     <CircularProgress className={classes.progress} />
                   ) : (
-                    <Link to="/dashboard">
+                    <Link to="/home">
                       <Button
                         className={classes.signInButton}
                         color="primary"
@@ -242,7 +224,7 @@ class SignIn extends Component {
                   )}
 
                   <Typography className={classes.signUp} variant="body1">
-                    Don't have an account?{' '}
+                    Don't have an account?
                     <Link className={classes.signUpUrl} to="/register">
                       Sign up
                     </Link>

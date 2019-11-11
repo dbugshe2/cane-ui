@@ -15,12 +15,12 @@ export class GoogleMap extends Component {
     this.state = {
       lat: 9.613607,
       lng: 6.547432,
-      zoom: 10
+      zoom: 10,
     };
 
   }
   render() {
-    const {lat, lng, zoom, time} = this.state
+    const {lat, lng} = this.props
     const { google } = this.props;
     return (
       <div style={{ position: 'relative', overflow: 'hidden', height: '60vh' }}>
@@ -30,8 +30,9 @@ export class GoogleMap extends Component {
             lat: lat,
             lng: lng
           }}
+          maxZoom={18}
           style={mapStyles}
-          zoom={zoom}
+          zoom={10}
         >
           <Marker
             icon={{

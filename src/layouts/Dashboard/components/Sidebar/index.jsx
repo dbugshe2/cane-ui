@@ -18,7 +18,6 @@ import {
   LockOpenOutlined as LockOpenIcon,
   HistoryOutlined as HistoryIcon,
   AccountBoxOutlined as AccountBoxIcon,
-  SettingsOutlined as SettingsIcon,
   LiveHelpOutlined as HelpIcon,
   DashboardOutlined as CaneIcon
 } from '@material-ui/icons';
@@ -50,7 +49,7 @@ class Sidebar extends Component {
             activeClassName={classes.activeListItem}
             className={classes.listItem}
             component={NavLink}
-            to="/dashboard"
+            to="/home"
           >
             <ListItemIcon className={classes.listItemIcon}>
               <DashboardIcon />
@@ -64,7 +63,7 @@ class Sidebar extends Component {
             activeClassName={classes.activeListItem}
             className={classes.listItem}
             component={NavLink}
-            to="/cane"
+            to="/dashboard"
           >
             <ListItemIcon className={classes.listItemIcon}>
               <CaneIcon />
@@ -144,7 +143,7 @@ class Sidebar extends Component {
 
 Sidebar.propTypes = {
   className: PropTypes.string,
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired 
 };
 
 export default withStyles(styles)(Sidebar);

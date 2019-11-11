@@ -1,3 +1,5 @@
+import { border } from '@material-ui/system';
+
 export default theme => ({
   root: {
     backgroundColor: theme.palette.background.default,
@@ -41,7 +43,9 @@ export default theme => ({
   content: {
     height: '100%',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   contentHeader: {
     display: 'flex',

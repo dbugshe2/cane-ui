@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { withStyles, Card } from '@material-ui/core';
-import { Grid, Typography } from '@material-ui/core';
-import { Dashboard as DashboardLayout } from 'layouts';
-import Carousel from 'nuka-carousel';
-import { PortletContent, Portlet, PortletLabel, PortletHeader } from 'components';
 
+// Externals
+import classNames from 'classnames';
+// import PropTypes from 'prop-types';
+
+// Material helpers
+import { withStyles } from '@material-ui/core';
+
+// Material components
+import { Typography, CircularProgress } from '@material-ui/core';
+import { Paper } from 'components';
+// import styles from './styles';
+import { Grid } from '@material-ui/core';
+import { Dashboard as DashboardLayout } from 'layouts';
+
+import { GoogleMap, CaneStatus } from '../../components';
+import CaneService from '../../services/cane';
 const styles = theme => ({
   root: {
     padding: theme.spacing.unit * 4
@@ -15,97 +25,135 @@ const styles = theme => ({
   }
 });
 
-class Dashboard extends Component {
-  render() {
-    const { classes } = this.props;
+const ID = '5dc87b1b8664f741a0155753';
+export class Cane extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      SN: '',
+      time: '',
+      location: {},
+      torch: null,
+      accelerometer: null,
+      gyroscope: null,
+      ultrasonic: null,
+      proximity: null,
+      battery: null,
+      loading: true
+    };
+    this.getCane = this.getCane.bind(this)
+    this.getCaneInterval = this.getCaneInterval.bind(this)
+  }
+  getCane = (caneId) => {
+    this.setState({ loading: true });
+    CaneService.getCaneById(caneId)
+      .then(Cane => {
+        if (Cane) {
+          console.log(Cane);
+          this.setState({ ...Cane });
+        }
+        this.setState({ loading: false });
+      })
+      .catch(err => {
+        console.error(err);
+        this.setState({ loading: false });
+      });
+  }
+  getCaneInterval = (id) => {
+    this.intervalID = setInterval(this.getCane(id), 1500);
+  }
 
+  componentDidMount() {
+    this.getCaneInterval(ID);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalID);
+  }
+
+  static propTypes = {};
+
+  render() {
+    const { classes, className, ...rest } = this.props;
+    const {
+      time,
+      torch,
+      accelerometer,
+      gyroscope,
+      ultrasonic,
+      proximity,
+      battery,
+      loading
+    } = this.state;
+    const { lat, lng } = this.state.location;
+    const LastSeenTime = time
+      ? new Date(time).toLocaleString()
+      : 'Time Currently unavailable';
+    const rootClassName = classNames(classes.root, className);
     return (
-      <DashboardLayout title="Development of an IWCR">
-        <div className={classes.root}>
-          <Grid container spacing={4}>
-            <Grid item lg={12} sm={12} xl={12} xs={12}>
-              <Card>
-                <Carousel
-                  autoplay
-                  heightMode="first"
-                  style={{ height: '400px' }}
-                >
-                  <img src="https://via.placeholder.com/800x400/ffffff/c0392b/&text=slide1" />
-                  <img src="https://via.placeholder.com/800x400/ffffff/c0392b/&text=slide2" />
-                  <img src="https://via.placeholder.com/800x400/ffffff/c0392b/&text=slide3" />
-                  <img src="https://via.placeholder.com/800x400/ffffff/c0392b/&text=slide4" />
-                  <img src="https://via.placeholder.com/800x400/ffffff/c0392b/&text=slide5" />
-                  <img src="https://via.placeholder.com/800x400/ffffff/c0392b/&text=slide6" />
-                </Carousel>
-              </Card>
-            </Grid>
+      <DashboardLayout title="Walking Stick Dashboard">
+        {loading ? (
+          <CircularProgress />
+        ) : (
+          <div className={classes.root}>
             <Grid container spacing={4}>
-              <Grid item lg={12} sm={12} xl={12} xs={12}>
-                <Portlet>
-                  <PortletHeader>
-                    <PortletLabel
-                      subtitle="Just some Info"
-                      title="General Information"
-                    />
-                  </PortletHeader>
-                  <PortletContent>
-                    <Typography variant="body1">
-                      Lorem ipsum dolor sit amet consectetur adipiscing elit
-                      quam risus pharetra id, malesuada mattis mus parturient
-                      feugiat varius quisque hac magnis eget habitasse, inceptos
-                      volutpat sem himenaeos nisi primis pulvinar a platea
-                      semper. Fames sem pretium habitant hac praesent
-                      ullamcorper risus eu, quis dictumst erat pharetra eleifend
-                      quam pulvinar sagittis platea, lectus ut sed vivamus
-                      mattis congue ligula. Facilisi potenti enim tellus cursus
-                      pellentesque auctor lacus semper conubia et vitae, proin
-                      lectus netus velit dictum platea nec morbi sem. Torquent
-                      montes facilisis ullamcorper nam curabitur lobortis felis
-                      conubia, morbi platea blandit nec taciti sollicitudin
-                      quisque placerat, laoreet ante pellentesque penatibus
-                      praesent fringilla tempus. Aenean aliquam justo sociis
-                      tempor non ridiculus auctor inceptos venenatis montes,
-                      integer lacinia interdum pharetra euismod sociosqu
-                      fringilla habitant porta et quam, dui himenaeos eleifend
-                      primis etiam volutpat lectus luctus augue. Vehicula
-                      curabitur blandit placerat eu netus nisl, metus facilisis
-                      odio tellus lacus habitant parturient, posuere litora
-                      mattis quam massa. Porttitor suspendisse class condimentum
-                      potenti duis cras dapibus integer at orci netus, proin
-                      accumsan justo felis varius vehicula auctor fermentum ac
-                      torquent, id egestas eget nibh consequat convallis
-                      venenatis purus massa aliquam. Nascetur curae volutpat
-                      facilisi urna sem vestibulum mollis cras, pellentesque in
-                      ultricies et nisi condimentum augue molestie, magnis
-                      quisque scelerisque cubilia torquent congue habitant.
-                      Tellus magna felis justo bibendum dictum malesuada fusce,
-                      metus molestie etiam eleifend libero cum auctor iaculis,
-                      purus vel tempus ridiculus pharetra nec. At vestibulum
-                      rhoncus risus tempus faucibus non duis luctus pretium,
-                      donec eleifend natoque ad tincidunt aptent ridiculus
-                      porttitor, aenean suspendisse semper nisi posuere dictum
-                      praesent himenaeos. Habitant ut convallis ante cursus
-                      torquent tempor euismod nulla ornare, habitasse potenti
-                      nostra sollicitudin condimentum proin vivamus luctus
-                      faucibus semper, ac laoreet suscipit felis imperdiet
-                      litora nunc praesent. Ultricies faucibus facilisis tempor
-                      dapibus fusce enim phasellus sapien, ullamcorper
-                      vestibulum netus interdum platea nibh ad, augue consequat
-                      vivamus eleifend morbi fringilla magna.
-                    </Typography>
-                  </PortletContent>
-                </Portlet>
+              <Grid item lg={6} sm={6} xl={6} xs={12}>
+                <Paper {...rest} className={rootClassName}>
+                  <div className={classes.content}>
+                    <div className={classes.details}>
+                      <Typography style={classes.title} variant="h4">
+                        Last Seen:
+                      </Typography>
+                      <Typography variant="h2">{LastSeenTime}</Typography>
+                    </div>
+                  </div>
+                </Paper>
+              </Grid>
+              <Grid item lg={6} sm={6} xl={6} xs={12}>
+                <Paper {...rest} className={rootClassName}>
+                  <div className={classes.content}>
+                    <div className={classes.details}>
+                      <Typography style={classes.title} variant="h4">
+                        Current Location:
+                      </Typography>
+                      <Typography variant="h2">
+                        FUT Minna, Gidan Kwano
+                      </Typography>
+                    </div>
+                  </div>
+                </Paper>
               </Grid>
             </Grid>
-          </Grid>
-        </div>
+            <Grid container spacing={4}>
+              <Grid item lg={8} sm={8} xl={8} xs={12}>
+                <Paper {...rest} className={rootClassName}>
+                  <Typography style={classes.title} variant="h3">
+                    Cane Locator
+                  </Typography>
+                  <GoogleMap lat={lat} lng={lng} />
+                </Paper>
+              </Grid>
+              <Grid item lg={3} sm={4} xl={4} xs={12}>
+                <Paper {...rest} className={rootClassName}>
+                  <Typography style={classes.title} variant="h3">
+                    Cane Status
+                  </Typography>
+                  <CaneStatus
+                    accelerometer={accelerometer}
+                    battery={battery}
+                    gyroscope={gyroscope}
+                    proximity={proximity}
+                    torch={torch}
+                    ultrasonic={ultrasonic}
+                  />
+                </Paper>
+              </Grid>
+            </Grid>
+          </div>
+        )}
       </DashboardLayout>
     );
   }
 }
 
-Dashboard.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(Dashboard);
+export default withStyles(styles)(Cane);

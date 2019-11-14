@@ -16,6 +16,7 @@ import { Dashboard as DashboardLayout } from 'layouts';
 
 import { GoogleMap, CaneStatus } from '../../components';
 import CaneService from '../../services/cane';
+
 const styles = theme => ({
   root: {
     padding: theme.spacing.unit * 4
@@ -133,7 +134,7 @@ export class Cane extends Component {
                   <GoogleMap lat={lat} lng={lng} />
                 </Paper>
               </Grid>
-              <Grid item lg={3} sm={4} xl={4} xs={12}>
+              <Grid item lg={4} sm={4} xl={4} xs={12}>
                 <Paper {...rest} className={rootClassName}>
                   <Typography style={classes.title} variant="h3">
                     Cane Status

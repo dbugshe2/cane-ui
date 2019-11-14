@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 import { Grid, Typography } from '@material-ui/core';
 import { Dashboard as DashboardLayout } from 'layouts';
-import { PortletContent, Portlet, PortletLabel, PortletHeader } from 'components';
+import {
+  PortletContent,
+  Portlet,
+  PortletLabel,
+  PortletHeader
+} from 'components';
 
 const styles = theme => ({
   root: {
@@ -21,7 +26,6 @@ class CaneHistory extends Component {
     return (
       <DashboardLayout title="History">
         <div className={classes.root}>
-            
           <Grid container spacing={4}>
             <Grid item lg={12} sm={12} xl={12} xs={12}>
               <Portlet>
@@ -33,48 +37,59 @@ class CaneHistory extends Component {
                 </PortletHeader>
                 <PortletContent>
                   <Typography variant="body1">
-                      Lorem ipsum dolor sit amet consectetur adipiscing elit
-                      quam risus pharetra id, malesuada mattis mus parturient
-                      feugiat varius quisque hac magnis eget habitasse, inceptos
-                      volutpat sem himenaeos nisi primis pulvinar a platea
-                      semper. Fames sem pretium habitant hac praesent
-                      ullamcorper risus eu, quis dictumst erat pharetra eleifend
-                      quam pulvinar sagittis platea, lectus ut sed vivamus
-                      mattis congue ligula. Facilisi potenti enim tellus cursus
-                      pellentesque auctor lacus semper conubia et vitae, proin
-                      lectus netus velit dictum platea nec morbi sem. Torquent
-                      montes facilisis ullamcorper nam curabitur lobortis felis
-                      conubia, morbi platea blandit nec taciti sollicitudin
-                      quisque placerat, laoreet ante pellentesque penatibus
-                      praesent fringilla tempus. Aenean aliquam justo sociis
-                      tempor non ridiculus auctor inceptos venenatis montes,
-                      integer lacinia interdum pharetra euismod sociosqu
-                      fringilla habitant porta et quam, dui himenaeos eleifend
-                      primis etiam volutpat lectus luctus augue. Vehicula
-                      curabitur blandit placerat eu netus nisl, metus facilisis
-                      odio tellus lacus habitant parturient, posuere litora
-                      mattis quam massa. Porttitor suspendisse class condimentum
-                      potenti duis cras dapibus integer at orci netus, proin
-                      accumsan justo felis varius vehicula auctor fermentum ac
-                      torquent, id egestas eget nibh consequat convallis
-                      venenatis purus massa aliquam. Nascetur curae volutpat
-                      facilisi urna sem vestibulum mollis cras, pellentesque in
-                      ultricies et nisi condimentum augue molestie, magnis
-                      quisque scelerisque cubilia torquent congue habitant.
-                      Tellus magna felis justo bibendum dictum malesuada fusce,
-                      metus molestie etiam eleifend libero cum auctor iaculis,
-                      purus vel tempus ridiculus pharetra nec. At vestibulum
-                      rhoncus risus tempus faucibus non duis luctus pretium,
-                      donec eleifend natoque ad tincidunt aptent ridiculus
-                      porttitor, aenean suspendisse semper nisi posuere dictum
-                      praesent himenaeos. Habitant ut convallis ante cursus
-                      torquent tempor euismod nulla ornare, habitasse potenti
-                      nostra sollicitudin condimentum proin vivamus luctus
-                      faucibus semper, ac laoreet suscipit felis imperdiet
-                      litora nunc praesent. Ultricies faucibus facilisis tempor
-                      dapibus fusce enim phasellus sapien, ullamcorper
-                      vestibulum netus interdum platea nibh ad, augue consequat
-                      vivamus eleifend morbi fringilla magna.
+                    As many countries step into the aging society rapidly, older
+                    people are experiencing motor functions deficits or
+                    disability of the limbs, which is usually caused by
+                    neurological problems or muscle strength
+                    deficiencies.(Wakita, Huang, Di, Sekiyama, & Fukuda, 2013).
+                    Walking is one of the main human activities in everyday life
+                    and visually impaired alike, the walker-type rehabilitation
+                    robot has become a popular research topic over the last
+                    decade. Human being receives information from the
+                    environment, 1% by taste, 1.5% by tactile sense, 3.5% by
+                    smell, 11% by hear and 83% by sight. Artificial vision is
+                    the most important part of human physiology as 83% of
+                    information human being gets from the environment is via
+                    sight.(Garcia Ramirez, da Silva, Cinelli, & de Albornoz,
+                    2012). In addition, the population of elderly and visually
+                    impaired people are increased to 962 million and 253 million
+                    as recorded by (United Nations, Department of Economic and
+                    Social Affairs, Population Division, 2017) and (Ackland,
+                    Resnikoff, & Bourne, 2018) respectively, which is a
+                    significantly enormous number. How to help this population
+                    sector to make their daily life more ease is an important
+                    question? The use of assistive technology could be one of
+                    possible solutions. Furthermore, in industrialized
+                    countries, regional disparities in healthcare and welfare
+                    services, increased medical expense caused by aging
+                    societies and shortages of medical staff have become serious
+                    problems. Therefore, there is a great need to develop
+                    rehabilitation robots that can partially replace the nurses
+                    and the therapists. There have been many smart walker-type
+                    robots consisting of active or passive wheels and supporting
+                    frame, yet there are still numerous inadequacies in the
+                    present walker frameworks. To begin with, numerous walkers
+                    are intended for indoor condition. Second, the majority of
+                    them are huge in size as well as substantial in weight.
+                    Third, in critical condition where an elderly or a visually
+                    impaired person wander off and cannot be found. An indoor
+                    robot is regularly confined inside constrained places. Huge
+                    size makes it difficult to be utilized in limited space and
+                    overwhelming weight confines the mobility. Numerous elders
+                    and patients are not all that feeble that they must be
+                    nursed cautiously. All things considered, adequate support,
+                    for example, a stick, is important to assist them with going
+                    for a stroll outside, which empowers them to acknowledge top
+                    notch lives or quicken the restoration. Unavailability of
+                    tracking system on the walker makes it hard to locate the
+                    elder ones when they are lost. Therefore, this research
+                    proposes to offer a design and construction modification of
+                    the existing intelligent walking cane robot (IWCR) to
+                    further improve its functionality. The proposed modified
+                    IWCR will be embedded with a tracker which will be managed
+                    by a web application. The web application will be created
+                    with capabilities to manage position and distress signal
+                    alert.
                   </Typography>
                 </PortletContent>
               </Portlet>

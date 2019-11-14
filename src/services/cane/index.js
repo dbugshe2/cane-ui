@@ -13,7 +13,7 @@ class CaneService {
       });
   }
   static async getCaneById(Id) {
-    return await axios.get('http://0e28845a.ngrok.io/canes/'+ Id)
+    return await axios.get('http://6bc02145.ngrok.io/canes/'+ Id)
       .then(response => response.data)
       .catch(error => {
         console.error('Error during login:', error); 

@@ -1,9 +1,11 @@
 import axios from 'axios';
-
+import * as React from 'react'
+const port = ''
+const BASE_URL = process.env.REACT_APP_BASE_URL || '127.0.0.1:'+ port
 class CaneService {
 
   static async getCaneBySerialNumber(SN) {
-    return await axios.get('https://eda25a46.ngrok.io/canes/', SN)
+    return await axios.get(BASE_URL + '/canes/', SN)
       .then(response => {
         console.log(response);
         return response.data
@@ -13,7 +15,7 @@ class CaneService {
       });
   }
   static async getCaneById(Id) {
-    return await axios.get('http://6bc02145.ngrok.io/canes/'+ Id)
+    return await axios.get(BASE_URL + '/canes/'+ Id)
       .then(response => response.data)
       .catch(error => {
         console.error('Error during login:', error); 

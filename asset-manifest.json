@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "//cane-ui/static/css/main.347b87a9.chunk.css",
+    "main.js": "//cane-ui/static/js/main.27898b8c.chunk.js",
+    "main.js.map": "//cane-ui/static/js/main.27898b8c.chunk.js.map",
+    "runtime~main.js": "//cane-ui/static/js/runtime~main.c83da5ab.js",
+    "runtime~main.js.map": "//cane-ui/static/js/runtime~main.c83da5ab.js.map",
+    "static/css/2.fa4a79a6.chunk.css": "//cane-ui/static/css/2.fa4a79a6.chunk.css",
+    "static/js/2.8e41b55e.chunk.js": "//cane-ui/static/js/2.8e41b55e.chunk.js",
+    "static/js/2.8e41b55e.chunk.js.map": "//cane-ui/static/js/2.8e41b55e.chunk.js.map",
+    "index.html": "//cane-ui/index.html",
+    "precache-manifest.3cca915b577a2282ced3836509fbc3fe.js": "//cane-ui/precache-manifest.3cca915b577a2282ced3836509fbc3fe.js",
+    "service-worker.js": "//cane-ui/service-worker.js",
+    "static/css/2.fa4a79a6.chunk.css.map": "//cane-ui/static/css/2.fa4a79a6.chunk.css.map",
+    "static/css/main.347b87a9.chunk.css.map": "//cane-ui/static/css/main.347b87a9.chunk.css.map",
+    "static/media/call.svg": "//cane-ui/static/media/call.58b5d0bb.svg",
+    "static/media/email.svg": "//cane-ui/static/media/email.6d5a67a0.svg",
+    "static/media/location.svg": "//cane-ui/static/media/location.b791b5a5.svg",
+    "static/media/logo-mandalina-suites.png": "//cane-ui/static/media/logo-mandalina-suites.34730ebf.png",
+    "static/media/slide1.jpg": "//cane-ui/static/media/slide1.b7dfe4b1.jpg",
+    "static/media/slide2.jpg": "//cane-ui/static/media/slide2.8a871456.jpg",
+    "static/media/slide3.jpg": "//cane-ui/static/media/slide3.61157571.jpg",
+    "static/media/slide4.jpg": "//cane-ui/static/media/slide4.97fa0fd5.jpg",
+    "static/media/slide5.jpg": "//cane-ui/static/media/slide5.d962ccb3.jpg",
+    "static/media/slide6.jpg": "//cane-ui/static/media/slide6.4d5b9bda.jpg"
+  }
+}

@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/cane-ui/static/css/main.347b87a9.chunk.css",
-    "main.js": "/cane-ui/static/js/main.f688095c.chunk.js",
-    "main.js.map": "/cane-ui/static/js/main.f688095c.chunk.js.map",
+    "main.js": "/cane-ui/static/js/main.23a2018f.chunk.js",
+    "main.js.map": "/cane-ui/static/js/main.23a2018f.chunk.js.map",
     "runtime~main.js": "/cane-ui/static/js/runtime~main.fc1283ba.js",
     "runtime~main.js.map": "/cane-ui/static/js/runtime~main.fc1283ba.js.map",
     "static/css/2.fa4a79a6.chunk.css": "/cane-ui/static/css/2.fa4a79a6.chunk.css",
     "static/js/2.8e41b55e.chunk.js": "/cane-ui/static/js/2.8e41b55e.chunk.js",
     "static/js/2.8e41b55e.chunk.js.map": "/cane-ui/static/js/2.8e41b55e.chunk.js.map",
     "index.html": "/cane-ui/index.html",
-    "precache-manifest.b42c6645ef57c91003ecdf1c59a7b863.js": "/cane-ui/precache-manifest.b42c6645ef57c91003ecdf1c59a7b863.js",
+    "precache-manifest.779d0746bec779b59356ad796c03426a.js": "/cane-ui/precache-manifest.779d0746bec779b59356ad796c03426a.js",
     "service-worker.js": "/cane-ui/service-worker.js",
     "static/css/2.fa4a79a6.chunk.css.map": "/cane-ui/static/css/2.fa4a79a6.chunk.css.map",
     "static/css/main.347b87a9.chunk.css.map": "/cane-ui/static/css/main.347b87a9.chunk.css.map",

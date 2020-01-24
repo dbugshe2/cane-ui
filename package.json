@@ -2,12 +2,15 @@
   "name": "react-material-dashboard",
   "version": "0.2.0",
   "private": true,
+  "homepage": "https://dbugshe2.github.io//cane-ui",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src --ext .js,.jsx"
+    "lint": "eslint src --ext .js,.jsx",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,6 +35,7 @@
     "axios": "^0.19.0",
     "chart.js": "^2.7.3",
     "classnames": "^2.2.6",
+    "gh-pages": "^2.2.0",
     "google-maps-react": "^2.0.2",
     "history": "^4.7.2",
     "material-ui-phone-number": "^2.0.0",

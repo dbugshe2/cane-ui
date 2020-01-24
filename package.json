@@ -2,7 +2,7 @@
   "name": "react-material-dashboard",
   "version": "0.2.0",
   "private": true,
-  "homepage": "https://dbugshe2.github.io//cane-ui",
+  "homepage": "https://dbugshe2.github.io/cane-ui",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

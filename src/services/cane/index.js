@@ -5,7 +5,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL || '127.0.0.1:'+ port
 class CaneService {
 
   static async getCaneBySerialNumber(SN) {
-    return await axios.get(BASE_URL + '/canes/', SN)
+    return await axios.get('http://' + BASE_URL + '/canes/', SN)
       .then(response => {
         console.log(response);
         return response.data
@@ -15,7 +15,7 @@ class CaneService {
       });
   }
   static async getCaneById(Id) {
-    return await axios.get(BASE_URL + '/canes/'+ Id)
+    return await axios.get('http://' + BASE_URL + '/canes/'+ Id)
       .then(response => response.data)
       .catch(error => {
         console.error('Error during login:', error); 

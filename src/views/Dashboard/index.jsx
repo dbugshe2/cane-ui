@@ -118,7 +118,7 @@ export class Cane extends Component {
                         Current Location:
                       </Typography>
                       <Typography variant="h2">
-                        FUT Minna, Gidan Kwano
+                        Not Available (WIP)
                       </Typography>
                     </div>
                   </div>
@@ -129,7 +129,7 @@ export class Cane extends Component {
               <Grid item lg={8} sm={8} xl={8} xs={12}>
                 <Paper {...rest} className={rootClassName}>
                   <Typography style={classes.title} variant="h3">
-                    Cane Locator
+                    Walking Stick Locator
                   </Typography>
                   <GoogleMap lat={lat} lng={lng} />
                 </Paper>
@@ -137,7 +137,7 @@ export class Cane extends Component {
               <Grid item lg={4} sm={4} xl={4} xs={12}>
                 <Paper {...rest} className={rootClassName}>
                   <Typography style={classes.title} variant="h3">
-                    Cane Status
+                    Walking Stick Status
                   </Typography>
                   <CaneStatus
                     accelerometer={accelerometer}

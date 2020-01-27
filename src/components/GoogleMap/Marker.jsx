@@ -6,7 +6,7 @@ const Marker = (props: any) => {
   return (
     <div
       className="marker"
-      style={{ backgroundImage: 'url(/images/blind.svg)' , cursor: 'pointer' }}
+      style={{ backgroundImage: 'url(./images/blind.svg)' , cursor: 'pointer' }}
       title={name}
     />
   );

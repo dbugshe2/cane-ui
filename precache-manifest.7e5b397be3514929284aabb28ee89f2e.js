@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b7924616688a765a0553477233fdc4a5",
+    "revision": "6ed0b220e9c4892eedcc8fa85ba6c5c2",
     "url": "/cane-ui/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cane-ui/static/css/2.fa4a79a6.chunk.css"
   },
   {
-    "revision": "17ad5e8546ae98b701d0",
+    "revision": "f0f66641e70b0aca4947",
     "url": "/cane-ui/static/css/main.347b87a9.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cane-ui/static/js/2.8e41b55e.chunk.js"
   },
   {
-    "revision": "17ad5e8546ae98b701d0",
-    "url": "/cane-ui/static/js/main.38961c9a.chunk.js"
+    "revision": "f0f66641e70b0aca4947",
+    "url": "/cane-ui/static/js/main.3347f174.chunk.js"
   },
   {
     "revision": "3809c94aed6bc7b44170",

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cane-ui/precache-manifest.c18b3a210d56e58aaf9dbf1b520634a4.js"
+  "/cane-ui/precache-manifest.33c77b6f2ec7599ca448d2f177fc5cb1.js"
 );
 
 self.addEventListener('message', (event) => {
